@@ -6,6 +6,8 @@ import "./globals.css";
 import Menubar from "../Components/Menubar";
 import Window from "../Components/Window";
 import Wallpaper from "../Components/Wallpaper";
+import { FloatingDock } from "../Components/doc";
+import { FloatingDockDemo } from "../Components/useDock";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,7 +29,8 @@ export default function RootLayout({
         <Menubar />
         <Window/>
           {children}  
-        <BottomDrawer />
+        {/* <BottomDrawer /> */}
+        <FloatingDockDemo/>
       </body>
     </html>
     </StrictMode>
