@@ -1,13 +1,11 @@
 import React, { StrictMode } from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import BottomDrawer from "../Components/BottomAppBar";
 import "./globals.css";
 import Menubar from "../Components/Menubar";
 import Window from "../Components/Window";
-import Wallpaper from "../Components/Wallpaper";
 import { FloatingDock } from "../Components/doc";
-import { FloatingDockDemo } from "../Components/useDock";
+import Wallpaper from "../Components/Wallpaper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,8 +27,7 @@ export default function RootLayout({
         <Menubar />
         <Window/>
           {children}  
-        {/* <BottomDrawer /> */}
-        <FloatingDockDemo/>
+        <FloatingDock/>
       </body>
     </html>
     </StrictMode>

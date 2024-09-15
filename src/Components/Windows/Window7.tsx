@@ -1,14 +1,15 @@
 import React from 'react';
 import WindowComponent from '../WindowStatusBar';
+import { Gallery } from '../Gallery';
 
-const Window7: React.FC<{ closeWindow: () => void }> = ({ closeWindow }) => {
+
+
+const Window5: React.FC<{ closeWindow: () => void }> = ({ closeWindow }) => {
   return (
-    <WindowComponent title='About Me'closeWindow={closeWindow} >
-    <div >
-      hello
-    </div>
+    <WindowComponent title="About Me" closeWindow={closeWindow}>
+      <Gallery/>
     </WindowComponent>
   );
 };
 
-export default Window7;
+export default Window5;

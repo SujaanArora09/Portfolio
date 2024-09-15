@@ -82,17 +82,18 @@ export const FloatingDock = ({
   }, [isWindowVisible, activeWindowComponent]);
 
   const icons: IconData[] = [
-    { title: "Icon 1", icon: <img src="icon1.png" alt="Icon 1" />, component: Window1 },
-    { title: "Icon 2", icon: <img src="icon2.png" alt="Icon 2" />, component: Window2 },
-    { title: "Icon 3", icon: <img src="icon3.png" alt="Icon 3" />, component: Window3 },
-    { title: "Icon 4", icon: <img src="icon4.png" alt="Icon 4" />, component: Window4 },
-    { title: "Icon 5", icon: <img src="icon5.png" alt="Icon 5" />, component: Window5 },
-    { title: "Icon 6", icon: <img src="icon6.png" alt="Icon 6" />, component: Window6 },
-    { title: "Icon 7", icon: <img src="icon7.png" alt="Icon 7" />, component: Window7 },
+    { title: "About Me", icon: <img src="icon1.png" alt="Icon 1" />, component: Window1 },
+    { title: "Web Projects", icon: <img src="icon2.png" alt="Icon 2" />, component: Window2 },
+    { title: "App Projects", icon: <img src="icon3.png" alt="Icon 3" />, component: Window3 },
+    { title: "UI/UX Projects", icon: <img src="icon4.png" alt="Icon 4" />, component: Window4 },
+    { title: "Gallary", icon: <img src="icon5.png" alt="Icon 5" />, component: Window5 },
+    { title: "Wallpapers", icon: <img src="icon6.png" alt="Icon 6" />, component: Window6 },
+    { title: "Contact Me", icon: <img src="icon7.png" alt="Icon 7" />, component: Window7 },
   ];
 
   return (
     <>
+    <div className="flex items-center justify-center h-fit w-full z-40 fixed bottom-3">
       <FloatingDockDesktop items={icons} className="hidden md:flex" toggleWindow={toggleWindow} />
       <FloatingDockMobile items={icons} className="flex md:hidden" toggleWindow={toggleWindow} />
       
@@ -101,6 +102,7 @@ export const FloatingDock = ({
           {React.createElement(activeWindowComponent, { closeWindow })}
         </Window>
       )}
+      </div>
     </>
   );
 };
@@ -120,7 +122,7 @@ const FloatingDockDesktop = ({
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        "mx-auto flex h-[90px] xl:h-[80px] pb-[35px] pr-7 gap-4 items-end rounded-2xl bg-white/25 backdrop-blur-lg dark:bg-neutral-900",
+        "mx-auto flex h-[80px] pb-8 pr-7 gap-4 items-end rounded-2xl bg-white/25 backdrop-blur-lg dark:bg-neutral-900",
         className
       )}
     >
@@ -221,6 +223,8 @@ function IconContainer({
   return (
     <button
       onClick={() => toggleWindow(component)}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
       className="aspect-square flex items-center justify-center relative mx-2"
     >
       <motion.div ref={ref} style={{ width, height }}>
@@ -230,7 +234,7 @@ function IconContainer({
               initial={{ opacity: 0, y: 10, x: "-50%" }}
               animate={{ opacity: 1, y: 0, x: "-50%" }}
               exit={{ opacity: 0, y: 2, x: "-50%" }}
-              className="rounded-md dark:border-neutral-900 dark:text-white border-gray-200 text-neutral-700 absolute left-1/2 -translate-x-1/2 -top-8 text-xs"
+              className="rounded-md ml-3 text-neutral-700 absolute left-1/2 -translate-x-1/2 font-semibold -top-8 text-xs bg-white/70 px-2 py-1 text-center backdrop-blur-xl whitespace-nowrap overflow-hidden text-ellipsis"
             >
               {title}
             </motion.div>
@@ -246,3 +250,5 @@ function IconContainer({
     </button>
   );
 }
+
+

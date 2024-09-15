@@ -114,7 +114,7 @@ function Menubar() {
   return (
     <div>
       <div className='fixed top-0 z-[999] w-screen'>
-        <div className='h-8 backdrop-blur-xl px-3 text-lg font-semibold text-gray-800/85 bg-slate-50/15 flex justify-between'>
+        <div className='h-8 backdrop-blur-xl px-3 text-base items-center font-semibold  text-gray-800/85 bg-slate-50/20 flex justify-between'>
           <div className='flex gap-6'>
             <img 
               className='h-7 opacity-70 cursor-pointer' 

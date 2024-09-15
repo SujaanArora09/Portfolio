@@ -1,12 +1,11 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { ScrollArea } from '@radix-ui/react-scroll-area';
-import { ScrollBar } from './ui/scroll-area';
 import gsap from 'gsap';
 
 interface WindowComponentProps {
   title: string;
   children: React.ReactNode;
   closeWindow: () => void; 
+  
 }
 
 const WindowComponent: React.FC<WindowComponentProps> = ({ title, children, closeWindow }) => {
@@ -49,26 +48,25 @@ const WindowComponent: React.FC<WindowComponentProps> = ({ title, children, clos
     };
   }, []);
 
+  
+
   return (
     <div
       ref={windowRef}
-      className={`bg-white/90 h-full w-full self-center rounded-md overflow-hidden flex flex-col -z-10 `}
+      className="bg-white/90 h-full w-full self-center rounded-md overflow-hidden flex flex-col -z-10"
     >
-      <div className='flex flex-row min-h-8 h-8 w-full border-b-2 px-2 backdrop-blur-lg'>
-        <div className='flex gap-3 w-fit h-full items-center'>
-          <button className='h-3.5 w-3.5 bg-red2 rounded-full' onClick={closeWindow}></button>
-          <button className='h-3.5 w-3.5 bg-yellow2 rounded-full' onClick={handleYellowClick}></button>
-          <button className='h-3.5 w-3.5 bg-green2 rounded-full' onClick={handleGreenClick}></button>
+      <div className="flex flex-row min-h-8 h-8 w-full border-b-2 px-2 ">
+        <div className="flex gap-3 w-fit h-full items-center">
+          <button className="h-3.5 w-3.5 bg-red2 rounded-full" onClick={closeWindow}></button>
+          <button className="h-3.5 w-3.5 bg-yellow2 rounded-full" onClick={handleYellowClick}></button>
+          <button className="h-3.5 w-3.5 bg-green2 rounded-full" onClick={handleGreenClick}></button>
         </div>
-        <div className='flex-grow flex justify-center items-center'>
-          <h3 className='text-lg font-semibold text-gray-800/85 -translate-x-10'>{title}</h3>
+        <div className="flex-grow flex justify-center items-center">
+          <h3 className="text-lg font-semibold text-gray-800/85 -translate-x-10">{title}</h3>
         </div>
       </div>
-      <div ref={scrollContainerRef} className='h-full flex-grow bg-white2/50'>
-        <ScrollArea className="w-full h-full rounded-md overflow-auto no-scrollbar pl-4 pr-4 pt-4 pb-12">
-          {children}
-          <ScrollBar orientation="vertical" />
-        </ScrollArea>
+      <div ref={scrollContainerRef} className="h-full flex-grow bg-white2/50 p-4 overflow-y-auto">
+        {children}
       </div>
     </div>
   );
