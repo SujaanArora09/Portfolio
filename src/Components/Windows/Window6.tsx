@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import WindowComponent from '../WindowStatusBar';
 import { wallpapers } from "../data/Wallpapers.json";
 
