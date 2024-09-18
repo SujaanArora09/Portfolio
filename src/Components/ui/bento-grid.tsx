@@ -25,19 +25,19 @@ const BentoGrid: React.FC = () => {
   }, []);
 
   const handleDownload = () => {
-    // var link = document.createElement('a');
-    // link.href = 'Sujan_Resume.pdf'; 
-    // link.download = 'Sujan_Resume.pdf';
-    // document.body.appendChild(link);
-    // link.click();
-    // document.body.removeChild(link);
+    var link = document.createElement('a');
+    link.href = 'Sujan_Resume.pdf'; 
+    link.download = 'Sujan_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
     <div className='relative w-full min-h-full rounded-xl overflow-hidden sm:overflow-visible bg-white2'>
       <div className='w-full justify-center my-16'>
         <span className='heading2 text-5xl pt-10 font-bold text-gray-800 w-full text-center' style={{ display: 'flex', justifyContent: 'center' }}>
-          STUFF THAT I CAN DO
+          Skills Bento Grid
         </span>
       </div>
       <div className='bento-grid mx-auto z-10 grid grid-cols-1 lg:grid-cols-3 gap-4 overflow-hidden'>

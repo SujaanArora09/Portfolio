@@ -83,12 +83,12 @@ export const FloatingDock = ({
 
   const icons: IconData[] = [
     { title: "About Me", icon: <img src="icon1.png" alt="Icon 1" />, component: Window1 },
-    { title: "Web Projects", icon: <img src="icon2.png" alt="Icon 2" />, component: Window2 },
-    { title: "App Projects", icon: <img src="icon3.png" alt="Icon 3" />, component: Window3 },
-    { title: "UI/UX Projects", icon: <img src="icon4.png" alt="Icon 4" />, component: Window4 },
-    { title: "Gallary", icon: <img src="icon5.png" alt="Icon 5" />, component: Window5 },
-    { title: "Wallpapers", icon: <img src="icon6.png" alt="Icon 6" />, component: Window6 },
-    { title: "Contact Me", icon: <img src="icon7.png" alt="Icon 7" />, component: Window7 },
+    { title: "Web Projects", icon: <img src="icon8.png" alt="Icon 2" />, component: Window2 },
+    { title: "UI/UX Projects", icon: <img src="icon4.png" alt="Icon 4" />, component: Window3 },
+    { title: "Gallary", icon: <img src="icon11.png" alt="Icon 4" />, component: Window4 },
+    { title: "Calculator", icon: <img src="icon12.png" alt="Icon 5" />, component: Window5 },
+    { title: "Wallpapers", icon: <img src="icon9.png" alt="Icon 6" />, component: Window6 },
+    { title: "Contact Me", icon: <img src="icon10.png" alt="Icon 7" />, component: Window7 },
   ];
 
   return (

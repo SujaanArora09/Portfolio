@@ -17,9 +17,9 @@ const CardOutline: React.FC<CardOutlineProps> = ({ title,subTitle, children , co
   return (
     <>
     
-    <div className={` flex flex-col  border-[7px] border-${color} rounded-lg h-full overflow-hidden`}>
+    <div className={` flex flex-col  border-[7px] border-blue2 rounded-lg h-full overflow-hidden`}>
         <img className="object-cover h-4/6 md:h-5/6 flex-grow" src={bannerImage} alt=""/>
-        <div className= {` bg-${color} flex flex-col md:flex-row items-start md:items-center h-2/6 md:h-1/6 `}>
+        <div className= {` bg-blue2 flex flex-col md:flex-row items-start md:items-center h-2/6 md:h-1/6 `}>
           <div className='h-full flex flex-row items-center '>
             <img src={logo} className='h-16 md:h-12 xl:h-3/4 ms-1 xl:ms-3  md:mt-1 ml-2 ' />
             <div className="flex flex-col p-4 md:mt-1 ">
